@@ -1,6 +1,6 @@
 # Rmsg
 
-Topics and Tasks in Ruby over RabbitMQ. A thin, minimal layer on top of Bunny.
+Topics and Tasks in Ruby over RabbitMQ. A thin, minimal layer on top of [Bunny](https://github.com/ruby-amqp/bunny).
 
 ## Installation.
 
@@ -11,7 +11,7 @@ $ brew install rabbitmq
 $ rabbitmq-server
 ```
 
-- Add the gem to the Gemfile:
+- Add rmsg to your Gemfile:
 ```ruby
 gem 'rmsg'
 ```
