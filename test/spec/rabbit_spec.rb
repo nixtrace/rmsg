@@ -5,11 +5,11 @@ describe 'Rabbit' do
     @rabbit = Rmsg::Rabbit.new
   end
 
-  it 'represent a RabbitMQ node' do
+  it 'represents RabbitMQ' do
     @rabbit.must_be_instance_of Rmsg::Rabbit
   end
 
-  it 'has a working connection' do
+  it 'has an open connection' do
     @rabbit.connection.open?.must_equal true
   end
 
