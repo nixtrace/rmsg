@@ -2,7 +2,7 @@
 
 Topics and Tasks in Ruby over RabbitMQ. A thin, minimal layer on top of Bunny.
 
-## Installation
+## Installation.
 
 1. [Install](https://www.rabbitmq.com/download.html) a local RabbitMQ server and start it:
 ```sh
@@ -11,22 +11,23 @@ $ brew install rabbitmq
 $ rabbitmq-server
 ```
 
-2. Add this line to your application's Gemfile:
+2. Add the gem to the Gemfile:
 ```ruby
 gem 'rmsg'
 ```
-And then run:
-```ruby
-$ bundle install
-```
-Or install it manually:
-```
-$ gem install rmsg
-```
 
-## Usage
+## Usage.
 
 TODO.
+
+## Tests.
+
+1. Be sure you have a local RabbitMQ server running.
+
+2. run tests with:
+```ruby
+bundle exec rake test:spec
+```
 
 ## Contributing
 
