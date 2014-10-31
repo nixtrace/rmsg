@@ -1,4 +1,5 @@
 require 'bunny'
+require 'json'
 require 'rmsg/version'
 require 'rmsg/rabbit'
 require 'rmsg/topic'
