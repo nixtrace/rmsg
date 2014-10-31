@@ -6,7 +6,7 @@ require 'rmsg/version'
 Gem::Specification.new do |spec|
   spec.name          = "rmsg"
   spec.version       = Rmsg::VERSION
-  spec.authors       = ["Marco Lisci"]
+  spec.authors       = ["badshark"]
   spec.email         = ["info@badshark.io"]
   spec.summary       = %q{Topics and Tasks over RabbitMQ.}
   spec.description   = %q{Topics and Tasks over RabbitMQ. A thin, minimal layer on top of Bunny.}
