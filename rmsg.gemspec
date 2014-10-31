@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Marco Lisci"]
   spec.email         = ["info@badshark.io"]
   spec.summary       = %q{Topics and Tasks over RabbitMQ.}
-  spec.description   = %q{Topics and Tasks over RabbitMQ. A thin, minimal layer over the Bunny gem.}
+  spec.description   = %q{Topics and Tasks over RabbitMQ. A thin, minimal layer on top of Bunny.}
   spec.homepage      = "https://github.com/_badshark/rmsg"
   spec.license       = "MIT"
 
