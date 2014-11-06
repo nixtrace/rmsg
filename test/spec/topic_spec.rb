@@ -20,15 +20,17 @@ describe 'Topic' do
 
   it 'works in a single publisher, single subscriber scenario' do
     read_message = ''
-    subscriber = 'bundle exec ruby test/bin/topic_subscriber.rb'
     publisher = 'bundle exec ruby test/bin/topic_publisher.rb'
+    subscriber = 'bundle exec ruby test/bin/topic_subscriber.rb'
 
+    # Start the subscriber, wait for it to be up,
+    # start the publisher and wait for the message
+    # on the subscriber side. Then kill
+    # the long-running subscriber.
     Open3.popen3(subscriber) do |stdin, stdout, stderr, wait_thr|
-      # Wait for the subscriber to be up
       sleep 2
       spawn(publisher)
       read_message = stdout.gets
-      # Kill long-running subscriber
       Process.kill('INT', wait_thr.pid)
     end
 
