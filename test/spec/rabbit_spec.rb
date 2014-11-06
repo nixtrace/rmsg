@@ -18,8 +18,13 @@ describe 'Rabbit' do
   end
 
   it 'can close its channel and connection' do
+    rabbit =  Rmsg::Rabbit.new
+    rabbit.close
+    rabbit.channel.closed?.must_equal true
+    rabbit.connection.closed?.must_equal true
+  end
+
+  after do
     @rabbit.close
-    @rabbit.channel.closed?.must_equal true
-    @rabbit.connection.closed?.must_equal true
   end
 end

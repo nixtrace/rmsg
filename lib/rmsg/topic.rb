@@ -13,8 +13,8 @@ module Rmsg
       @queue = @rabbit.channel.queue("", :exclusive => true)
       @queue.bind(@exchange, :routing_key => key)
       begin
-        @queue.subscribe(:block => false) do |delivery_info, metadata, payload|
-          message = JSON.parse payload
+        @queue.subscribe(:block => true) do |delivery_info, metadata, payload|
+          message = JSON.parse(payload, symbolize_names: true)
           yield message
         end
       rescue Interrupt => _
