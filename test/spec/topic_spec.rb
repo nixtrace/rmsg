@@ -18,7 +18,7 @@ describe 'Topic' do
     @topic.must_be_instance_of Rmsg::Topic
   end
 
-  it 'works in a single publisher, single subscriber scenario' do
+  it 'works in a pub/sub scenario with a topic and a key' do
     read_message = ''
     publisher = 'bundle exec ruby test/bin/topic_publisher.rb'
     subscriber = 'bundle exec ruby test/bin/topic_subscriber.rb'
