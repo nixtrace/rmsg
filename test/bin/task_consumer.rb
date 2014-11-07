@@ -7,5 +7,5 @@ messages = Rmsg::Task.new(rabbit: rabbit, queue: 'messages')
 
 messages.subscribe do |message|
   sleep 1
-  p "Message processed: #{message['id']}"
+  p message
 end
