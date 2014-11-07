@@ -1,14 +1,29 @@
 module Rmsg
+  # Topic handles publishing and subscribing
+  # to a topic with a key, over RabbitMQ.
   class Topic
+    # @param params [Hash]
+    # * :rabbit [Rmsg::Rabbit] Example: Rmsg::Rabbit.new
+    # * :topic [String] Example: 'services'
     def initialize(params)
       @rabbit = params[:rabbit]
       @exchange = @rabbit.channel.topic(params[:topic])
     end
 
+    # Publish a message with a routing key.
+    # @param message [Hash] Example: {id: 1, key: 'xxxccc'}
+    # @param key [String] Example: 'users.key_changed'
+    # @return [Exchange] The exchange used to publish.
     def publish(message, key)
       @exchange.publish(message.to_json, :routing_key => key)
     end
 
+    # Subscribe to the topic, listening for a specific key.
+    # Subscribing happens by continuously blocking the current process.
+    # It is specifically designed for long running processes.
+    # When receiving INT it will gracefully close.
+    # @param key [String] Example: 'users.key_changed'
+    # @yield message [Hash] A block to process the message received.
     def subscribe(key)
       @queue = @rabbit.channel.queue("", :exclusive => true)
       @queue.bind(@exchange, :routing_key => key)

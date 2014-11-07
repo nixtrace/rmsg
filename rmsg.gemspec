@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "rmsg"
   spec.version       = Rmsg::VERSION
   spec.authors       = ["badshark"]
-  spec.email         = ["info@badshark.io"]
+  spec.email         = ["marco@badshark.io"]
   spec.summary       = %q{RabbitMQ messaging.}
   spec.description   = %q{RabbitMQ messaging with topics and tasks. A thin, minimal layer on top of Bunny.}
   spec.homepage      = "https://github.com/badshark/rmsg"
